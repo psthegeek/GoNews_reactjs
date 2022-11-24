@@ -18,7 +18,7 @@ export default class News extends Component {
 
     async componentDidMount(){
         console.log("cdm")
-        let url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=0f310e74bf714a99ab616f4f0f838516`;
+        let url = `https://newsapi.org/v2/top-headlines?sources=google-news-in&apiKey=0f310e74bf714a99ab616f4f0f838516`;
         let data = await fetch(url);
         console.log(data)
         let parseData = await data.json()
@@ -31,7 +31,7 @@ export default class News extends Component {
       if (this.state.page + 1 > Math.ceil(this.state.totalResults / 20)) {
       }
       else {
-          let url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=0f310e74bf714a99ab616f4f0f838516`;
+          let url = `https://newsapi.org/v2/top-headlines?sources=google-news-in&apiKey=0f310e74bf714a99ab616f4f0f838516`;
           let data = await fetch(url);
           let parsedData = await data.json()
           console.log(parsedData);
